@@ -26,7 +26,7 @@ jobs:
           EOF
       - name: Transferr1
         run: |
-          rclone copy gdrive:"/Transfer/Pahe Final/Pahe Part 1" onedrive1:"/Pahe Part 1" -P --stats 30s
+          rclone copy gdrive:"/Transfer/Pahe Final/Pahe Part 1" onedrive1:"/Pahe Part 1" -P --stats 30s --checkers=32 --transfers=32 --fast-list
   syncc2:
     needs : syncc1
     runs-on: ubuntu-latest
@@ -47,7 +47,7 @@ jobs:
           EOF
       - name: Transferr2
         run: |
-          rclone copy gdrive:"/Transfer/Pahe Final/Pahe Part 2" onedrive2:"/Pahe Part 2" -P --stats 30s
+          rclone copy gdrive:"/Transfer/Pahe Final/Pahe Part 2" onedrive2:"/Pahe Part 2" -P --stats 30s --checkers=32 --transfers=32 --fast-list
   syncc3:
     needs : syncc2
     runs-on: ubuntu-latest
@@ -68,7 +68,7 @@ jobs:
           EOF
       - name: Transferr3
         run: |
-          rclone copy gdrive:"/Transfer/Sorted/Movies" onedrive3:"/PSA Movies" -P --stats 30s
+          rclone copy gdrive:"/Transfer/Sorted/Movies" onedrive3:"/PSA Movies" -P --stats 30s --checkers=32 --transfers=32 --fast-list
   syncc4:
     needs : syncc3
     runs-on: ubuntu-latest
@@ -89,7 +89,7 @@ jobs:
           EOF
       - name: Transferr4
         run: |
-          rclone copy gdrive:"/Transfer/Sorted/TV Shows Part 1" onedrive4:"/PSA TV Part 1" -P --stats 30s
+          rclone copy gdrive:"/Transfer/Sorted/TV Shows Part 1" onedrive4:"/PSA TV Part 1" -P --stats 30s --checkers=32 --transfers=32 --fast-list
   syncc5:
     needs : syncc4
     runs-on: ubuntu-latest
@@ -110,4 +110,4 @@ jobs:
           EOF
       - name: Transferr5
         run: |
-          rclone copy gdrive:"/Transfer/Sorted/TV Shows Part 2" onedrive5:"/PSA TV Part 2" -P --stats 30s
+          rclone copy gdrive:"/Transfer/Sorted/TV Shows Part 2" onedrive5:"/PSA TV Part 2" -P --stats 30s --checkers=32 --transfers=32 --fast-list
